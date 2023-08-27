@@ -6,8 +6,9 @@
   "scripts": {
     "postinstall": "serenity-bdd update",
     "clean": "rimraf playwright-report target",
-    "test": "failsafe clean postinstall test:execute test:report",
-    "test:execute": "playwright test",
+    "test:web": "failsafe clean postinstall test:execute:headless test:report",
+    "test:execute:headless": "playwright test",
+    "test:execute:visible": "npx playwright test --headed",
     "test:report:playwright": "npx playwright show-report",
     "test:report": "serenity-bdd run",
     "start": "mkdirp target/site/serenity && npx http-server -p 8080 target/site/serenity -s -o",
