@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "serenity-bdd update",
     "clean": "rimraf playwright-report target",
-    "test:web": "failsafe clean postinstall test:execute:headless test:report",
+    "test:web": "failsafe clean postinstall test:execute:headless",
     "test:execute:headless": "playwright test",
     "test:execute:visible": "npx playwright test --headed",
     "test:report:playwright": "npx playwright show-report",
@@ -47,6 +47,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.37.1",
+    "@types/mocha": "^10.0.1",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.4.0",
     "eslint": "^8.47.0",
